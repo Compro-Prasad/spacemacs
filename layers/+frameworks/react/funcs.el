@@ -31,6 +31,7 @@
       (progn
         (lsp-javascript-typescript-enable)
         (lsp-javascript-flow-enable)
+        (lsp-typescript-enable)
         (spacemacs//setup-lsp-jump-handler 'rjsx-mode))
     (message "`lsp' layer is not installed, please add `lsp' layer to your dotfile.")))
 
