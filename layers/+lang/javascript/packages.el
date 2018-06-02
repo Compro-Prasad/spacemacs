@@ -171,8 +171,16 @@
   (use-package lsp-javascript-typescript
     :commands lsp-javascript-typescript-enable
     :defer t
-    :init (add-hook 'js2-mode-hook 'lsp-mode)
-    :config (require 'lsp-javascript-flow)))
+    :init
+    (add-hook 'js2-mode-hook 'lsp-mode)
+    (require 'lsp-javascript-flow)
+    (require 'lsp-typescript)
+    (add-hook 'js-mode-hook #'lsp-javascript-typescript-enable)
+    (add-hook 'js-mode-hook #'lsp-javascript-flow-enable)
+    (add-hook 'js-mode-hook #'lsp-typescript-enable)
+    ;; (add-hook 'js-mode-hook
+    ;;           #'spacemacs//lsp-js-setup-backend)
+    ))
 
 (defun javascript/init-skewer-mode ()
   (use-package skewer-mode

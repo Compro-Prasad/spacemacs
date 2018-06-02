@@ -27,13 +27,24 @@
 
 ;; lsp
 
+(defun spacemacs//lsp-js-setup-backend ()
+  "Setup lsp backend for js-mode"
+  (if (configuration-layer/layer-used-p 'lsp)
+      (progn
+        (lsp-javascript-typescript-enable)
+        (lsp-javascript-flow-enable)
+        (lsp-typescript-enable))
+    (message (concat "`lsp' layer is not installed, "
+                     "please add `lsp' layer to your dotfile."))))
+
 (defun spacemacs//javascript-setup-lsp ()
   "Setup lsp backend."
   (if (configuration-layer/layer-used-p 'lsp)
       (progn
         (spacemacs//setup-lsp-jump-handler 'js2-mode)
         (lsp-javascript-typescript-enable)
-        (lsp-javascript-flow-enable))
+        (lsp-javascript-flow-enable)
+        (lsp-typescript-enable))
     (message (concat "`lsp' layer is not installed, "
                      "please add `lsp' layer to your dotfile."))))
 
