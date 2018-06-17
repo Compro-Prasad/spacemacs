@@ -45,4 +45,4 @@ https://github.com/emacs-lsp/lsp-javascript/issues/9#issuecomment-379515379"
     (let ((completion-ignore-case t))
       (all-completions (company-grab-symbol) candidates)))
   (make-local-variable 'company-transformers)
-  (add-to-list 'company-transformers 'lsp-prefix-company-transformer))
+  (push 'lsp-prefix-company-transformer company-transformers))
