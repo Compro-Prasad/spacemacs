@@ -29,10 +29,8 @@
   "Setup lsp backend."
   (if (configuration-layer/layer-used-p 'lsp)
       (progn
-        (lsp-javascript-typescript-enable)
-        (lsp-javascript-flow-enable)
-        (lsp-typescript-enable)
-        (spacemacs//setup-lsp-jump-handler 'rjsx-mode))
+        (spacemacs//setup-lsp-jump-handler 'rjsx-mode)
+        (lsp-javascript-typescript-enable))
     (message "`lsp' layer is not installed, please add `lsp' layer to your dotfile.")))
 
 (defun spacemacs//react-setup-lsp-company ()
