@@ -66,8 +66,6 @@
   "Setup lsp backend."
   (if (configuration-layer/layer-used-p 'lsp)
       (progn
-        (spacemacs//setup-lsp-jump-handler 'typescript-mode
-                                    'typescript-tsx-mode)
         (lsp-javascript-typescript-enable))
     (message (concat "`lsp' layer is not installed, "
                      "please add `lsp' layer to your dotfile."))))

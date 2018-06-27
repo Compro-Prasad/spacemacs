@@ -167,7 +167,8 @@
   (use-package lsp-javascript-typescript
     :commands lsp-javascript-typescript-enable
     :defer t
-    :init (add-hook 'js2-mode-hook 'lsp-mode)))
+    :init (add-hook 'js2-mode-hook 'lsp-mode)
+    :config (spacemacs//setup-lsp-jump-handler 'js2-mode)))
 
 (defun javascript/init-skewer-mode ()
   (use-package skewer-mode
